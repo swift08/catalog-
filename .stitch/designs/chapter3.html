@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&amp;family=Lexend:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#8f9097",
+                    "on-secondary": "#00382d",
+                    "surface-container-low": "#191c1e",
+                    "surface-dim": "#101415",
+                    "secondary-fixed-dim": "#38debb",
+                    "surface-container-lowest": "#0b0f10",
+                    "surface-container": "#1d2022",
+                    "surface": "#101415",
+                    "on-secondary-container": "#004d3f",
+                    "on-tertiary": "#00363f",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#002019",
+                    "tertiary-fixed-dim": "#58d6f1",
+                    "surface-tint": "#b9c7e4",
+                    "primary-container": "#0a192f",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#323537",
+                    "surface-bright": "#363a3b",
+                    "on-background": "#e0e3e5",
+                    "inverse-surface": "#e0e3e5",
+                    "on-surface": "#e0e3e5",
+                    "inverse-primary": "#515f78",
+                    "secondary": "#41e4c0",
+                    "on-surface-variant": "#c5c6cd",
+                    "inverse-on-surface": "#2d3133",
+                    "surface-container-high": "#272a2c",
+                    "on-primary": "#233148",
+                    "on-tertiary-fixed": "#001f25",
+                    "on-primary-container": "#74829d",
+                    "on-primary-fixed": "#0d1c32",
+                    "secondary-fixed": "#5ffbd6",
+                    "primary-fixed": "#d6e3ff",
+                    "primary": "#b9c7e4",
+                    "tertiary-container": "#001c22",
+                    "on-secondary-fixed-variant": "#005142",
+                    "outline-variant": "#44474d",
+                    "background": "#101415",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#323537",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#008ea4",
+                    "tertiary": "#58d6f1",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "tertiary-fixed": "#a7edff",
+                    "on-tertiary-fixed-variant": "#004e5b",
+                    "secondary-container": "#00c7a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "container-max": "1280px",
+                    "layer-gap": "40px",
+                    "section-padding": "120px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["lexend"],
+                    "body-lg": ["lexend"],
+                    "display-lg": ["manrope"],
+                    "headline-md": ["manrope"],
+                    "label-sm": ["manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-pane {
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+        .glowing-capsule {
+            background: linear-gradient(135deg, var(--tw-colors-secondary) 0%, var(--tw-colors-tertiary) 100%);
+            box-shadow: 0 0 20px rgba(65, 228, 192, 0.4);
+            transition: all 0.5s ease;
+        }
+        .glowing-capsule:hover {
+            box-shadow: 0 0 40px rgba(65, 228, 192, 0.6);
+            transform: scale(1.05);
+        }
+        .atmosphere-sphere {
+            filter: blur(80px);
+            opacity: 0.15;
+            position: absolute;
+            z-index: -1;
+        }
+        .liquid-sphere {
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent);
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.4), inset 5px 5px 15px rgba(255,255,255,0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary/30">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-10 md:py-4 bg-slate-900/40 backdrop-blur-3xl rounded-full mt-6 mx-auto w-[92%] max-w-7xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-400" data-icon="school">school</span>
+<span class="text-2xl font-black tracking-tighter text-white drop-shadow-lg font-manrope">BLUE BLOCKS</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-manrope tracking-widest uppercase font-bold text-xs">
+<a class="text-slate-300 hover:bg-white/5 hover:scale-105 transition-all duration-500 px-3 py-1 rounded-full" href="#">Philosophy</a>
+<a class="text-blue-300 border-b-2 border-blue-400 pb-1" href="#">People</a>
+<a class="text-slate-300 hover:bg-white/5 hover:scale-105 transition-all duration-500 px-3 py-1 rounded-full" href="#">Environments</a>
+</div>
+<button class="glowing-capsule px-6 py-2 rounded-full text-on-secondary font-label-sm uppercase tracking-widest">
+            ADMISSIONS
+        </button>
+</nav>
+<main class="relative overflow-hidden pt-32">
+<!-- Atmospheric Background Elements -->
+<div class="atmosphere-sphere w-[500px] h-[500px] bg-primary rounded-full top-20 -left-64"></div>
+<div class="atmosphere-sphere w-[400px] h-[400px] bg-tertiary rounded-full bottom-40 -right-48"></div>
+<div class="atmosphere-sphere w-[300px] h-[300px] bg-secondary rounded-full top-1/2 left-1/3"></div>
+<!-- Hero Section: The People -->
+<section class="max-w-7xl mx-auto px-6 py-section-padding text-center relative z-10">
+<div class="inline-block px-4 py-1 glass-pane rounded-full text-blue-400 font-label-sm mb-6">
+                CHAPTER THREE
+            </div>
+<h1 class="font-display-lg text-display-lg text-white mb-8">
+                A Community Built <br/><span class="text-secondary">on Trust.</span>
+</h1>
+<p class="max-w-2xl mx-auto text-body-lg font-body-lg text-on-surface-variant">
+                Meet the visionaries and guides who craft the future of learning every day. Our collective wisdom is the foundation of your child's growth.
+            </p>
+</section>
+<!-- Founders Section (Bento Style) -->
+<section class="max-w-7xl mx-auto px-6 py-section-padding relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Founder Card -->
+<div class="md:col-span-7 glass-pane rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center overflow-hidden relative">
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden flex-shrink-0 border border-white/20">
+<img alt="Founder Portrait" class="w-full h-full object-cover" data-alt="A professional woman with a warm, visionary expression, soft studio lighting, high-end corporate portrait with deep navy background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzPsDB54AQahE7NCVhKL61aK3s6xUhweLC6HgEpTZ3Ms7Kss-bCKxkOfvo1mn4P-SnjMFAolLYwEBs6SWd5Bbyvb2nWV4hkpQGbqwZHKsFLadlB0iiE1_v2yvzeyTO0cedezlJXYXedufrZmz-KqpfZa9LcEF_ZnpoN7r5uQG4Q6GT0QCSebGFKbl2HvRNTJbO7bAxf_SBVjI1DGQVFFq6ny-kRV3ecpkrIoiU6DEVcKSHhwGLApl1QDU9-9p-NQMwu8MjW1-4Yo1"/>
+</div>
+<div class="text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Elena Vance</h3>
+<p class="text-secondary font-label-sm uppercase tracking-widest mb-4">Founder &amp; Lead Visionary</p>
+<p class="text-on-surface-variant font-body-md mb-6">
+                            "Education is not the filling of a pail, but the lighting of a fire. We build the hearth where that fire can burn safely and brightly."
+                        </p>
+<div class="flex gap-4 justify-center md:justify-start">
+<span class="material-symbols-outlined text-blue-400" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined text-blue-400" data-icon="psychology">psychology</span>
+</div>
+</div>
+</div>
+<!-- Secondary Founder/Trust Aspect -->
+<div class="md:col-span-5 glass-pane rounded-3xl p-8 flex flex-col justify-center text-center">
+<div class="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6 liquid-sphere">
+<span class="material-symbols-outlined text-tertiary scale-150" data-icon="verified">verified</span>
+</div>
+<h4 class="font-headline-md text-white mb-4">Our Integrity</h4>
+<p class="text-on-surface-variant font-body-md">
+                        25 years of combined experience in high-end Montessori pedagogy, focused on the individual trajectory of the child.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Floating Portraits: The Guides (Teachers) -->
+<section class="max-w-7xl mx-auto px-6 py-section-padding relative">
+<h2 class="font-headline-md text-white text-center mb-16">The Guides of Discovery</h2>
+<div class="flex flex-wrap justify-center gap-10">
+<!-- Teacher Card 1 -->
+<div class="w-64 glass-pane rounded-2xl p-6 transform hover:-translate-y-4 transition-all duration-700">
+<div class="aspect-square rounded-xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500 border border-white/10">
+<img alt="Teacher 1" class="w-full h-full object-cover" data-alt="Modern male educator with glasses, smiling warmly, soft cinematic lighting, atmospheric background with blurred classroom elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNcgzSvQAtQz69KsAb5B1qy2Bhi2lyWTyYCIfwuJplYElAartxd_9a8Cqq9-AVLCBU41AeTnkYOpdu4WowrL0aKGatwkaSkTspMMwhnBvC7W-0wYoUkj2ZlQqYUFv6CkNSDW9HBYBCtcWh__T4UZT4DGhu9IFHpga9S1aenn3coZBjtYmRO02CQ8w7FsJy8TqvP2fmA9o9Re5xCPsIsTZXtXJLTHzTjEO_6pu--iUY9GFR5ZyOCu2yWmoPIyWEop6OtJFVXSpEg-TN"/>
+</div>
+<h5 class="text-white font-headline-md text-xl mb-1">Marcus Thorne</h5>
+<p class="text-tertiary font-label-sm mb-3">Mathematical Logic Guide</p>
+</div>
+<!-- Teacher Card 2 -->
+<div class="w-64 glass-pane rounded-2xl p-6 transform translate-y-12 hover:translate-y-8 transition-all duration-700">
+<div class="aspect-square rounded-xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500 border border-white/10">
+<img alt="Teacher 2" class="w-full h-full object-cover" data-alt="Young professional female teacher, calm expression, cinematic natural lighting, ethereal soft focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQkzd1Utnlb4rHEgFDARfq9GgwFNF5HusuCu3EHy28_24X6ytpZfZ3NgNesM_3kEhZh542kEb4N1hm2PyoNF6pl8dOMn4yQQewFUfmme9ziimyM4iFACnvumVPNcKnROdCn6hxUen8eEYVYFe24p8Vq-VLo6CDnkdD0kTHheGvCzmOzveytikcfyl4nKvP_Ndfgtv42YFs-skp24ReeUuUdTsUlYM5o3dEYo5dOK3eFxWksmIdkRSO_mAzrtWo8WMcJMXMOH_pHJR"/>
+</div>
+<h5 class="text-white font-headline-md text-xl mb-1">Sofia Chen</h5>
+<p class="text-tertiary font-label-sm mb-3">Linguistic Arts Specialist</p>
+</div>
+<!-- Teacher Card 3 -->
+<div class="w-64 glass-pane rounded-2xl p-6 transform -translate-y-6 hover:-translate-y-10 transition-all duration-700">
+<div class="aspect-square rounded-xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500 border border-white/10">
+<img alt="Teacher 3" class="w-full h-full object-cover" data-alt="Distinguished male educator, friendly eyes, professional studio lighting, deep aesthetic tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBttfbKys99jNuDrrRuplFlNgvQAgOf5ze7D6373GPa-XR-OW_reAeYICg-oRHlNIQF4nSfUkSdJ1KUwVeZ3BA37huTjKcoOwe07f369-DziCOyQpxTfJ-4x2nytG5PcQ2FcTBYyWEJHzSQtgoEXgo0kPeaxJ7q9bttOUhIrG7JDrXksXwHnGIa0LpM0E1fylnP2SgYS1rBKIgi7aGP-A7-uwR9V8y_JFn7bjC1SO28B2uhbgPoyMLe32w8n7iGggiFMiTBFuHIenTS"/>
+</div>
+<h5 class="text-white font-headline-md text-xl mb-1">Julian Ross</h5>
+<p class="text-tertiary font-label-sm mb-3">Cosmic Education Lead</p>
+</div>
+</div>
+</section>
+<!-- Parent Engagement Section -->
+<section class="max-w-7xl mx-auto px-6 py-section-padding">
+<div class="glass-pane rounded-[40px] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center gap-16">
+<!-- Abstract 3D blocks visual (represented as CSS shapes) -->
+<div class="absolute -top-20 -right-20 w-64 h-64 border-2 border-white/5 rotate-45 rounded-3xl"></div>
+<div class="absolute bottom-10 left-10 w-32 h-32 border border-white/10 -rotate-12 rounded-xl"></div>
+<div class="md:w-1/2 relative z-10">
+<h2 class="font-display-lg text-display-lg text-white mb-6">Parent <br/>Engagement</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10">
+                        Trust is a dialogue. We integrate parents into the educational journey through a unique portal and weekly immersive feedback sessions.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full glass-pane flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+</div>
+<span class="text-white font-body-md">Bi-Weekly Coffee &amp; Curricula Sessions</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full glass-pane flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<span class="text-white font-body-md">Live Classroom Observation Windows</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="glass-pane rounded-3xl p-8 bg-white/5 border-white/20">
+<h4 class="text-white font-headline-md mb-6">Trust Meter</h4>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between text-on-surface-variant font-label-sm mb-2">
+<span>PARENT SATISFACTION</span>
+<span>98%</span>
+</div>
+<div class="h-3 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full glowing-capsule" style="width: 98%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-on-surface-variant font-label-sm mb-2">
+<span>STUDENT RETENTION</span>
+<span>100%</span>
+</div>
+<div class="h-3 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full glowing-capsule" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<div class="mt-10 p-6 rounded-2xl bg-blue-500/10 border border-blue-400/20 text-center">
+<p class="text-tertiary font-body-md italic">"The level of transparency here is unlike any other school. I feel like a partner in my daughter's growth."</p>
+<p class="text-white font-label-sm mt-4 uppercase">— SARAH J., PARENT</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation FAB (BottomNavBar) -->
+<div class="fixed bottom-10 right-10 z-50">
+<button class="w-16 h-16 rounded-full border border-white/20 backdrop-blur-xl bg-transparent flex items-center justify-center text-blue-400 shadow-[0_0_30px_rgba(96,165,250,0.3)] hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Footer Shell -->
+<footer class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8 relative pt-32 pb-12 bg-transparent">
+<div class="flex gap-12 text-slate-500 font-manrope text-sm font-light tracking-wide">
+<a class="hover:text-blue-400 transition-colors duration-300" href="#">Philosophy</a>
+<a class="hover:text-blue-400 transition-colors duration-300" href="#">Environments</a>
+<a class="text-white font-medium" href="#">Admissions</a>
+<a class="hover:text-blue-400 transition-colors duration-300" href="#">Memory Trail</a>
+</div>
+<div class="font-bold text-white font-manrope">BLUE BLOCKS MONTESSORI</div>
+<p class="text-slate-500 font-manrope text-sm font-light tracking-wide">
+            © 2024 Blue Blocks Montessori. The Future of Learning.
+        </p>
+</footer>
+</body></html>

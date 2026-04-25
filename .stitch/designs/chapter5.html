@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Lexend:wght@300;400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#8f9097",
+                    "on-secondary": "#00382d",
+                    "surface-container-low": "#191c1e",
+                    "surface-dim": "#101415",
+                    "secondary-fixed-dim": "#38debb",
+                    "surface-container-lowest": "#0b0f10",
+                    "surface-container": "#1d2022",
+                    "surface": "#101415",
+                    "on-secondary-container": "#004d3f",
+                    "on-tertiary": "#00363f",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-error": "#690005",
+                    "on-secondary-fixed": "#002019",
+                    "tertiary-fixed-dim": "#58d6f1",
+                    "surface-tint": "#b9c7e4",
+                    "primary-container": "#0a192f",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#323537",
+                    "surface-bright": "#363a3b",
+                    "on-background": "#e0e3e5",
+                    "inverse-surface": "#e0e3e5",
+                    "on-surface": "#e0e3e5",
+                    "inverse-primary": "#515f78",
+                    "secondary": "#41e4c0",
+                    "on-surface-variant": "#c5c6cd",
+                    "inverse-on-surface": "#2d3133",
+                    "surface-container-high": "#272a2c",
+                    "on-primary": "#233148",
+                    "on-tertiary-fixed": "#001f25",
+                    "on-primary-container": "#74829d",
+                    "on-primary-fixed": "#0d1c32",
+                    "secondary-fixed": "#5ffbd6",
+                    "primary-fixed": "#d6e3ff",
+                    "primary": "#b9c7e4",
+                    "tertiary-container": "#001c22",
+                    "on-secondary-fixed-variant": "#005142",
+                    "outline-variant": "#44474d",
+                    "background": "#101415",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#323537",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#008ea4",
+                    "tertiary": "#58d6f1",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "tertiary-fixed": "#a7edff",
+                    "on-tertiary-fixed-variant": "#004e5b",
+                    "secondary-container": "#00c7a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "container-max": "1280px",
+                    "layer-gap": "40px",
+                    "section-padding": "120px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Lexend", "sans-serif"],
+                    "body-lg": ["Lexend", "sans-serif"],
+                    "display-lg": ["Manrope", "sans-serif"],
+                    "headline-md": ["Manrope", "sans-serif"],
+                    "label-sm": ["Manrope", "sans-serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(88, 214, 241, 0.4);
+        }
+        .memory-trail-gradient {
+            background: radial-gradient(circle at center, rgba(88, 214, 241, 0.15) 0%, transparent 70%);
+        }
+        .floating-orb {
+            filter: blur(80px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-slate-900/40 backdrop-blur-3xl rounded-full mt-6 mx-auto w-[90%] max-w-7xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400" data-icon="school">school</span>
+<span class="text-2xl font-black tracking-tighter text-white drop-shadow-lg font-manrope">BLUE BLOCKS</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-manrope tracking-widest uppercase font-bold text-slate-300 hover:text-blue-400 transition-all duration-500" href="#">Philosophy</a>
+<a class="font-manrope tracking-widest uppercase font-bold text-slate-300 hover:text-blue-400 transition-all duration-500" href="#">Environments</a>
+<a class="font-manrope tracking-widest uppercase font-bold text-blue-300 border-b-2 border-blue-400 pb-1 transition-all duration-500" href="#">Memory Trail</a>
+</nav>
+<button class="font-manrope tracking-widest uppercase font-bold text-blue-400 border border-blue-400/30 px-6 py-2 rounded-full hover:bg-white/5 hover:scale-105 transition-all duration-500">
+            ADMISSIONS
+        </button>
+</header>
+<!-- Background Atmospheric Layer -->
+<div class="fixed inset-0 -z-10 bg-radial-at-b from-primary-container to-background overflow-hidden">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-tertiary/20 rounded-full floating-orb"></div>
+<div class="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-secondary/10 rounded-full floating-orb"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full floating-orb"></div>
+</div>
+<!-- Main Content Stage -->
+<main class="relative z-10 pt-section-padding px-6 max-w-7xl mx-auto space-y-section-padding pb-32">
+<!-- Hero Finale Section -->
+<section class="flex flex-col items-center text-center">
+<div class="mb-12 inline-block px-4 py-2 rounded-full glass-panel text-tertiary font-label-sm uppercase tracking-widest">
+                Chapter 5: Connection
+            </div>
+<h1 class="font-display-lg text-white text-[56px] md:text-[84px] leading-tight mb-8">
+                The Future of <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-tertiary">Learning is Here.</span>
+</h1>
+<p class="max-w-2xl text-on-surface-variant font-body-lg text-lg mb-12">
+                A bridge between tradition and tomorrow. Blue Blocks is not just a school; it's a launchpad for the architects of the future.
+            </p>
+<!-- Memory Trail Visualization Pane -->
+<div class="w-full max-w-4xl glass-panel p-12 rounded-[40px] relative overflow-hidden group">
+<div class="absolute inset-0 memory-trail-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-white text-xl">Wonder</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Igniting the innate spark of curiosity.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-headline-md text-white text-xl">Precision</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Mastering the skills that define excellence.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="diversity_3">diversity_3</span>
+</div>
+<h3 class="font-headline-md text-white text-xl">Union</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Connecting minds in a global ecosystem.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Gallery / Cinematic Close -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-layer-gap">
+<div class="aspect-square rounded-[32px] overflow-hidden glass-panel">
+<img alt="Future Vision" class="w-full h-full object-cover mix-blend-lighten opacity-80" data-alt="Modern minimalist classroom with large glass windows overlooking a lush forest, soft cinematic blue hour lighting, premium furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC--4nlOOzXf_5RAVyCvGV0nCA2QGxKYZwz-_sLPwJz--3GPmxaB5FOPv-yM10MQGM3JJ-C-2ClGD5wfWLnDVpy4evbFA5nSkNFcNVQup9MCrnlVIsxZRGubeSKwwVe5YnCCaY9A3azpWn9kpjLpHEiwWvEcHJ7papTe868AAZLa-hV-YBup6WLoEOB_NOlhIHkg3RlgjILBJAF7sq1iK6DfYCRBtFDOALxKRTSgW3e_DlSIRguNpIpBCtpbKxV9vU-8a11chmYFeA"/>
+</div>
+<div class="flex flex-col justify-center gap-8 px-8">
+<div class="w-12 h-1 bg-tertiary rounded-full"></div>
+<h2 class="font-headline-md text-white text-4xl leading-tight">Join a legacy of visionary thinkers and compassionate leaders.</h2>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-tertiary/20 transition-all">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="arrow_forward">arrow_forward</span>
+</span>
+<span class="font-manrope uppercase tracking-widest text-sm font-bold text-white group-hover:translate-x-2 transition-transform">Explore the Philosophy</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-tertiary/20 transition-all">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="arrow_forward">arrow_forward</span>
+</span>
+<span class="font-manrope uppercase tracking-widest text-sm font-bold text-white group-hover:translate-x-2 transition-transform">Discover Our Environments</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="relative py-24 px-12 rounded-[48px] overflow-hidden flex flex-col items-center justify-center text-center">
+<div class="absolute inset-0 bg-primary-container/60 backdrop-blur-3xl -z-10"></div>
+<div class="absolute -top-1/2 -right-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px]"></div>
+<span class="text-tertiary font-label-sm tracking-[0.3em] mb-6">NEXT ACADEMIC CYCLE</span>
+<h2 class="font-display-lg text-white mb-12">The Journey Begins with a Single Step.</h2>
+<button class="bg-gradient-to-br from-tertiary to-blue-500 text-on-tertiary-fixed font-manrope font-extrabold text-2xl tracking-tighter px-16 py-8 rounded-full glow-button hover:scale-105 active:scale-95 transition-all duration-500 shadow-2xl">
+                ADMISSIONS OPEN
+            </button>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8 relative pt-32 pb-12 bg-transparent">
+<div class="flex flex-col items-center gap-6">
+<div class="font-bold text-white text-3xl tracking-tighter font-manrope">BLUE BLOCKS</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-manrope text-sm font-light tracking-wide text-slate-500 hover:text-blue-400 transition-colors duration-300" href="#">Philosophy</a>
+<a class="font-manrope text-sm font-light tracking-wide text-slate-500 hover:text-blue-400 transition-colors duration-300" href="#">Environments</a>
+<a class="font-manrope text-sm font-light tracking-wide text-white font-medium hover:text-blue-400 transition-colors duration-300" href="#">Admissions</a>
+<a class="font-manrope text-sm font-light tracking-wide text-slate-500 hover:text-blue-400 transition-colors duration-300" href="#">Memory Trail</a>
+</div>
+</div>
+<p class="font-manrope text-sm font-light tracking-wide text-slate-500 mt-8">© 2024 Blue Blocks Montessori. The Future of Learning.</p>
+</footer>
+<!-- Bottom Navigation Shell (Mobile Only Toggle / Scroll Top) -->
+<button class="fixed bottom-10 right-10 z-50 w-16 h-16 rounded-full bg-transparent border border-white/20 backdrop-blur-xl shadow-[0_0_30px_rgba(96,165,250,0.3)] flex items-center justify-center hover:scale-110 transition-all group">
+<span class="material-symbols-outlined text-blue-400 group-hover:text-white" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</body></html>
