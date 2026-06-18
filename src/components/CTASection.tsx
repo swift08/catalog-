@@ -35,7 +35,8 @@ export function CTASection() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/videos/Safe Transport.mp4"
+          src="/videos/Safe Transport.webm"
+          poster="/thumbnails/transport.webp"
           autoPlay
           muted
           loop

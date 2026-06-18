@@ -16,6 +16,7 @@ interface ChapterProps {
   intro: string;
   image: string;
   videoSrc?: string;
+  poster?: string;
   imageAlt: string;
   slides: Slide[];
   tone?: "calm" | "playful" | "energy" | "aspire" | "warm";
@@ -40,6 +41,7 @@ export function Chapter({
   intro,
   image,
   videoSrc,
+  poster,
   imageAlt,
   slides,
   tone = "calm",
@@ -167,9 +169,11 @@ export function Chapter({
                   <video
                     ref={videoRef}
                     src={videoSrc}
+                    poster={poster}
                     muted
                     loop
                     playsInline
+                    preload="none"
                     className={`h-full w-full ${originalRatio ? "object-contain" : "object-cover"} transition-transform duration-[2000ms] group-hover:scale-110`}
                   />
                 ) : (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);

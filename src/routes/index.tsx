@@ -151,7 +151,8 @@ function Index() {
         title="The Seed of Curiosity"
         intro="In the soft light of a Montessori morning, curiosity takes its first steps. A world designed for the child's wonder."
         image=""
-        videoSrc="/videos/Day in Life-3-6YRS.mp4"
+        videoSrc="/videos/Day in Life-3-6YRS.webm"
+        poster="/thumbnails/primary.webp"
         imageAlt="Child engaging in Montessori activities"
         slides={ch1}
         tone="calm"
@@ -165,7 +166,8 @@ function Index() {
         title="Worlds to Discover"
         intro="Where the earth meets the sky. Experience a curriculum that bridges the wisdom of nature with the frontiers of technology."
         image=""
-        videoSrc="/videos/Farm Day.mp4"
+        videoSrc="/videos/Farm Day.webm"
+        poster="/thumbnails/farm.webp"
         imageAlt="Children at the Blue Blocks farm"
         slides={ch2}
         tone="playful"
@@ -180,7 +182,8 @@ function Index() {
         title="Soaring Higher"
         intro="Mastering the skies. Our specialized Drone Lab brings the science of flight into the hands of the student."
         image=""
-        videoSrc="/videos/Drone Lab.mp4"
+        videoSrc="/videos/Drone Lab.webm"
+        poster="/thumbnails/drone.webp"
         imageAlt="Students in the Drone Lab"
         slides={[
           {
@@ -205,7 +208,8 @@ function Index() {
         title="Building Intelligence"
         intro="Moments of cinematic curiosity. Watch as focus emerges from the pure, vibrant chaos of discovery."
         image=""
-        videoSrc="/videos/Red Sweater Kid.mp4"
+        videoSrc="/videos/Red Sweater Kid.webm"
+        poster="/thumbnails/discovery.webp"
         imageAlt="Child working with Montessori materials"
         slides={ch3}
         tone="energy"
@@ -220,7 +224,8 @@ function Index() {
         title="The Primary Years"
         intro="From the first steps of Primary, we prepare explorers for the world of tomorrow."
         image=""
-        videoSrc="/videos/BB-Primary.mp4"
+        videoSrc="/videos/BB-Primary.webm"
+        poster="/thumbnails/primary-env.webp"
         imageAlt="Students in the primary environment"
         slides={[
           { title: "Foundation", subtitle: "Ages 3-6", body: "Sensorial and language mastery." },
@@ -236,7 +241,8 @@ function Index() {
         title="Elementary & Beyond"
         intro="Continuing the journey with depth, rigour, and imagination."
         image=""
-        videoSrc="/videos/BB-Elementary.mp4"
+        videoSrc="/videos/BB-Elementary.webm"
+        poster="/thumbnails/elementary.webp"
         imageAlt="Students in the elementary environment"
         slides={[
           {
@@ -257,7 +263,8 @@ function Index() {
         title="The Erdkinder Stage"
         intro="Preparing the earth-children for the challenges of the global future."
         image=""
-        videoSrc="/videos/BB-erdkinder.mp4"
+        videoSrc="/videos/BB-erdkinder.webm"
+        poster="/thumbnails/erdkinder.webp"
         imageAlt="Middle school students"
         slides={[
           {
@@ -277,7 +284,8 @@ function Index() {
         title="The Visionary Heart"
         intro="A legacy of excellence built by pioneers. Meet the founders behind the dream."
         image=""
-        videoSrc="/videos/Founders at BB.mp4"
+        videoSrc="/videos/Founders at BB.webm"
+        poster="/thumbnails/founders.webp"
         imageAlt="Founders of Blue Blocks"
         slides={[
           {
@@ -298,7 +306,8 @@ function Index() {
         title="Nurturing Souls"
         intro="Passionate teachers dedicated to nurturing the human spirit."
         image=""
-        videoSrc="/videos/Teachers at BB.mp4"
+        videoSrc="/videos/Teachers at BB.webm"
+        poster="/thumbnails/teachers.webp"
         imageAlt="Teachers at Blue Blocks"
         slides={[
           {
@@ -318,7 +327,8 @@ function Index() {
         title="A Shared Journey"
         intro="A collaborative ecosystem where families thrive together."
         image=""
-        videoSrc="/videos/Parent Engagement at BB.mp4"
+        videoSrc="/videos/Parent Engagement at BB.webm"
+        poster="/thumbnails/parents.webp"
         imageAlt="Parents at Blue Blocks"
         slides={[
           {

@@ -39,7 +39,8 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          src="/videos/Pony Tail Girl.mp4"
+          src="/videos/Pony Tail Girl.webm"
+          poster="/thumbnails/hero.webp"
           autoPlay
           muted
           loop
