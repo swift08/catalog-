@@ -130,7 +130,7 @@ function Index() {
           "Wonder",
           "Nature",
           "STEM",
-          "Skills",
+          "Toddler",
           "Primary",
           "Elementary",
           "Erdkinder",
@@ -205,7 +205,7 @@ function Index() {
         id="chapter-3"
         index="03"
         eyebrow="Skill Building"
-        title="Building Intelligence"
+        title="Toddler Environment"
         intro="Moments of cinematic curiosity. Watch as focus emerges from the pure, vibrant chaos of discovery."
         image=""
         videoSrc="/videos/Red Sweater Kid.webm"
